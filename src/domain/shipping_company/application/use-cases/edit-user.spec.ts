@@ -1,15 +1,15 @@
 import { InMemoryUserRepository } from 'test/repositories/in-memory-user-repository';
-import { UpdateUser } from './edit-user';
+import { EditUserUseCase } from './edit-user';
 import { makeUser } from 'test/factories/make-user';
 import { UniqueEntityId } from '@/core/entities/unique-entity-id';
 
 let inMemoryUserRepository: InMemoryUserRepository;
-let sut: UpdateUser;
+let sut: EditUserUseCase;
 
 describe('Edit User', () => {
   beforeEach(() => {
     inMemoryUserRepository = new InMemoryUserRepository();
-    sut = new UpdateUser(inMemoryUserRepository);
+    sut = new EditUserUseCase(inMemoryUserRepository);
   });
 
   it('should be able to update user', async () => {

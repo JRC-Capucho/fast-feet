@@ -1,7 +1,7 @@
 # FastFeet
 
 ## About 
- - Nesse desafio desenvolveremos uma API para controle de encomendas de uma transportadora fictícia, a FastFeet.
+ - In this challenge we will develop an API to control orders for a fictitious carrier, FastFeet. 
 
 ## Installation
 
@@ -38,10 +38,10 @@ $ pnpm run test:cov
 ### Functional
 
  [ ] The application must have two types of users, delivery personnel and/or admin.
- [ ] It must be possible to log in with CPF and password.
- [ ] CRUD operations must be possible for delivery personnel.
+ [ ] It must be possible to login with CPF and password.
+ [x] CRUD operations must be possible for delivery personnel.
  [ ] CRUD operations must be possible for orders.
- [ ] CRUD operations must be possible for recipients.
+ [x] CRUD operations must be possible for recipients.
  [ ] It must be possible to mark an order as awaiting pickup (available for retrieval).
  [ ] It must be possible to pick up an order.
  [ ] It must be possible to mark an order as delivered.

@@ -1,6 +1,5 @@
 import { InMemoryUserRepository } from 'test/repositories/in-memory-user-repository';
 import { makeUser } from 'test/factories/make-user';
-import { UniqueEntityId } from '@/core/entities/unique-entity-id';
 import { GetUser } from './get-user';
 
 let inMemoryUserRepository: InMemoryUserRepository;
@@ -13,12 +12,7 @@ describe('Get User', () => {
   });
 
   it('should be able to get a user', async () => {
-    const user = makeUser(
-      {
-        name: 'John Doe',
-      },
-      new UniqueEntityId('1'),
-    );
+    const user = makeUser();
 
     await inMemoryUserRepository.create(user);
 

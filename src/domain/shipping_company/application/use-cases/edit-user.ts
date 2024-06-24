@@ -5,7 +5,7 @@ import { UserNotFoundError } from './errors/user-not-found-error';
 
 type Role = 'admin' | 'deliveryman';
 
-interface IUpdateUserUseCaseRequest {
+interface IEditUserUseCaseRequest {
   userId: string;
   name?: string;
   cpf?: string;
@@ -13,9 +13,9 @@ interface IUpdateUserUseCaseRequest {
   roles?: Role[];
 }
 
-type IUpdateUserUserCaseResponse = Either<UserNotFoundError, { user: User }>;
+type IEditUserUserCaseResponse = Either<UserNotFoundError, { user: User }>;
 
-export class UpdateUser {
+export class EditUserUseCase {
   constructor(private userRepository: IUserRepository) {}
 
   async execute({
@@ -24,7 +24,7 @@ export class UpdateUser {
     cpf,
     password,
     roles,
-  }: IUpdateUserUseCaseRequest): Promise<IUpdateUserUserCaseResponse> {
+  }: IEditUserUseCaseRequest): Promise<IEditUserUserCaseResponse> {
     const user = await this.userRepository.findById(userId);
 
     if (!user) {
