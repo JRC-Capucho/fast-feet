@@ -1,6 +1,7 @@
 import { Either, left, right } from '@/core/either';
 import { Recipient } from '../../entenprise/entities/recipients';
 import { IRecipientRepository } from '../repositories/recipient-repository';
+import { RecipientNotFoundError } from './errors/recipient-not-found-error';
 
 interface IEditRecipientUseCaseRequest {
   recipientId: string;
@@ -29,7 +30,7 @@ export class EditRecipientUseCase {
     const recipient = await this.recipientRepository.findBydId(recipientId);
 
     if (!recipient) {
-      return left(new Error());
+      return left(new RecipientNotFoundError());
     }
 
     recipient.CEP = CEP;

@@ -40,7 +40,7 @@ $ pnpm run test:cov
 - [ ]   The application must have two types of users, delivery personnel and/or admin.
 - [ ]   It must be possible to login with CPF and password.
 - [x]   CRUD operations must be possible for delivery personnel.
-- [ ]   CRUD operations must be possible for orders.
+- [x]   CRUD operations must be possible for orders.
 - [x]   CRUD operations must be possible for recipients.
 - [ ]   It must be possible to mark an order as awaiting pickup (available for retrieval).
 - [ ]   It must be possible to pick up an order.
