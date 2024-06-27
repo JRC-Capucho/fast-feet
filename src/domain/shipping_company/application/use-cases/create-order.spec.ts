@@ -17,6 +17,7 @@ describe('Create recipient', () => {
     const result = await sut.execute({
       item: 'item',
       status: 'pending',
+      isAvaliable: false,
       destinatarioId: destination.id.toString(),
     });
 

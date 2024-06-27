@@ -1,28 +1,27 @@
 import { Either, left, right } from '@/core/either';
-import { Order } from '../../entenprise/entities/order';
-import { IOrderRepository } from '../repositories/order-repository';
 import { OrderNotFoundError } from './errors/order-not-found-error';
+import { IOrderRepository } from '../repositories/order-repository';
+import { Order } from '../../entenprise/entities/order';
 
-interface IEditOrderUseCaseRequest {
+interface IChangeStatusOrderUseCaseRequest {
   orderId: string;
   status: string;
-  recipientId: string;
-  item: string;
   isAvaliable: boolean;
 }
 
-type IEditOrderUseCaseResponse = Either<Error, { order: Order }>;
+type IChangeStatusOrderUseCaseResponse = Either<
+  OrderNotFoundError,
+  { order: Order }
+>;
 
-export class EditOrderUseCase {
+export class ChangeStatusOrderUseCase {
   constructor(private orderRepository: IOrderRepository) {}
 
   async execute({
     orderId,
-    isAvaliable,
-    recipientId,
-    item,
     status,
-  }: IEditOrderUseCaseRequest): Promise<IEditOrderUseCaseResponse> {
+    isAvaliable,
+  }: IChangeStatusOrderUseCaseRequest): Promise<IChangeStatusOrderUseCaseResponse> {
     const order = await this.orderRepository.findById(orderId);
 
     if (!order) {
@@ -30,8 +29,6 @@ export class EditOrderUseCase {
     }
 
     order.status = status;
-    order.recipientId = recipientId;
-    order.item = item;
     order.isAvaliable = isAvaliable;
 
     await this.orderRepository.save(order);

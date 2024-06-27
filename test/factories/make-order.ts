@@ -19,6 +19,7 @@ export function makeOrder(
         'returned',
       ]),
       recipientId: faker.string.uuid(),
+      isAvaliable: faker.datatype.boolean(),
       ...override,
     },
     id,

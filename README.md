@@ -37,15 +37,15 @@ $ pnpm run test:cov
 
 ### Functional
 
-- [ ]   The application must have two types of users, delivery personnel and/or admin.
-- [ ]   It must be possible to login with CPF and password.
+- [x]   The application must have two types of users, delivery personnel and/or admin.
+- [x]   It must be possible to login with CPF and password.
 - [x]   CRUD operations must be possible for delivery personnel.
 - [x]   CRUD operations must be possible for orders.
 - [x]   CRUD operations must be possible for recipients.
-- [ ]   It must be possible to mark an order as awaiting pickup (available for retrieval).
-- [ ]   It must be possible to pick up an order.
-- [ ]   It must be possible to mark an order as delivered.
-- [ ]   It must be possible to mark an order as returned.
+- [x]   It must be possible to mark an order as awaiting pickup (available for retrieval).
+- [x]   It must be possible to pick up an order.
+- [x]   It must be possible to mark an order as delivered.
+- [x]   It must be possible to mark an order as returned.
 - [ ]   It must be possible to list orders with delivery addresses near the delivery personnel's location.
 - [ ]   It must be possible to change a user's password.
 - [ ]   It must be possible to list a user's deliveries.

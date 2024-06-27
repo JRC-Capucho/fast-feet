@@ -4,6 +4,7 @@ import { UniqueEntityId } from '@/core/entities/unique-entity-id';
 export interface IOrderProps {
   item: string;
   status: string;
+  isAvaliable: boolean;
   recipientId: string;
 }
 
@@ -18,6 +19,14 @@ export class Order extends Entity<IOrderProps> {
 
   get recipientId() {
     return this.props.recipientId;
+  }
+
+  get isAvaliable() {
+    return this.props.isAvaliable;
+  }
+
+  set isAvaliable(isAvaliable: boolean) {
+    this.props.isAvaliable = isAvaliable;
   }
 
   set status(status: string) {
