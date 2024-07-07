@@ -6,6 +6,9 @@ export interface IOrderProps {
   status: string;
   isAvaliable: boolean;
   recipientId: string;
+
+  latitude: number;
+  longitude: number;
 }
 
 export class Order extends Entity<IOrderProps> {
@@ -23,6 +26,22 @@ export class Order extends Entity<IOrderProps> {
 
   get isAvaliable() {
     return this.props.isAvaliable;
+  }
+
+  get latitude() {
+    return this.props.latitude;
+  }
+
+  get longitude() {
+    return this.props.longitude;
+  }
+
+  set latitude(latitude: number) {
+    this.props.latitude = latitude;
+  }
+
+  set longitude(longitude: number) {
+    this.props.longitude = longitude;
   }
 
   set isAvaliable(isAvaliable: boolean) {
